@@ -28,8 +28,8 @@ def main():
 
 	options, arguments = parser.parse_args()
 
-	core = Core()
-	print core
+	core = Core("test")
+	core.username_osint()
 
 	return 0
 
