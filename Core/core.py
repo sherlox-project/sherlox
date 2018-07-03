@@ -1,15 +1,15 @@
 from Engines import EngineLoader
-from Parsers import ParserLoader
+
 class Core:
-	username = ""
-	parsers = None
-	engines = None
+	username_osint_sources  = ["namechk"]
+	user_name = ""
+	engine_loader = None
 
 	def __init__(self, user_name):
 		self.username = user_name
-		self.parsers = ParserLoader()
-		self.engines = EngineLoader()
+		self.engine_loader = EngineLoader()
 
 	def username_osint(self):
-		data = self.engines.run(self.username)
+		for engine in self.engine_loader.engines:
+			data = self.engine_loader.run(engine, self.user_name)
 		print data
