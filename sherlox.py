@@ -28,7 +28,7 @@ def main():
 
 	options, arguments = parser.parse_args()
 
-	core = Core("test")
+	core = Core("sana.abrahimen")
 	core.username_osint()
 
 	return 0
